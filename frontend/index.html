@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Vision Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>AI Vision Studio</h1>
+            <ul>
+                <li><a href="#captioning-module">Image Captioning</a></li>
+                <li><a href="#generation-module">Image Generation</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <section id="captioning-module" class="module captioning-module">
+            <h2 class="module-title">Image Captioning <button class="toggle-btn" aria-label="Toggle captioning module"></button></h2>
+            <div class="module-content">
+                <div class="video-container">
+                    <video id="videoElement" autoplay playsinline></video>
+                </div>
+                <div id="caption" class="caption">Captions will appear here</div>
+                <div class="button-group">
+                    <button id="liveCaptioning" class="btn primary">Start Live Captioning</button>
+                    <button id="snapshotCaption" class="btn secondary">Snapshot Caption</button>
+                </div>
+            </div>
+        </section>
+        <section id="generation-module" class="module generation-module collapsed">
+            <h2 class="module-title">Image Generation <button class="toggle-btn" aria-label="Toggle generation module"></button></h2>
+            <div class="module-content">
+                <div id="generatedImageContainer" class="image-container"></div>
+                <textarea id="generationPrompt" placeholder="Enter a prompt for image generation"></textarea>
+                <button id="generateImage" class="btn primary">Generate Image</button>
+            </div>
+        </section>
+    </main>
+    <script type="module" src="src/main.js"></script>
+</body>
+</html>
